@@ -20,66 +20,82 @@ POR FAVOR VERIFIQUE LA INFORMACION
 
 <div class="datos">
 
-<p><b>Referencia:</b> <span id="r">12345</span></p>
-<p><b>Concepto:</b> <span id="c">Pago de servicio</span></p>
-<p><b>Valor:</b> $<span id="v">120000</span></p>
-<p><b>Email:</b> <span id="e">cliente@correo.com</span></p>
-<p><b>Nombre:</b> <span id="n">Juan Pérez</span></p>
-<p><b>Cédula:</b> <span id="d">123456789</span></p>
-<p><b>Celular:</b> <span id="t">3001234567</span></p>
+<p><b>Referencia:</b> <span id="r"></span></p>
+<p><b>Concepto:</b> <span id="c"></span></p>
+<p><b>Valor:</b> $<span id="v"></span></p>
+<p><b>Email:</b> <span id="e"></span></p>
+<p><b>Nombre:</b> <span id="n"></span></p>
+<p><b>Cédula:</b> <span id="d"></span></p>
+<p><b>Celular:</b> <span id="t"></span></p>
 
 </div>
 
-<div class="pagos">
-
-<h3>Opciones de pago</h3>
-
-<p>Referencia de Consignacion Autofinanciera: <b>0091814862</b></p>
-
-<button onclick="abrirAppBancolombia()" class="banco">
-ABRIR APP BANCOLOMBIA
+<button onclick="mostrarQR()" class="pagar">
+PAGAR
 </button>
 
-<br><br>
+</div>
 
-<img src="pse.png" class="pse">
-<p>O utiliza PSE para pagar desde tu banco</p>
+
+<!-- MODAL QR -->
+
+<div id="modalQR" class="modal">
+
+<div class="modalContenido">
+
+<h3>Pagar con QR Bancolombia</h3>
+
+<img src="qr.png" class="qr">
+
+<p class="guardar">
+Mantén presionado el QR para guardarlo en tu galería
+</p>
+
+<div class="pasos">
+
+<p>1. Guarde la imagen QR</p>
+<p>2. Ingrese a su app MiBancolombia</p>
+<p>3. Dar <b>Escanear código QR</b></p>
+<p>4. Dar <b>Imagen</b> (seleccionar desde galería)</p>
+<p>5. Seleccione el QR guardado</p>
+<p>6. Ingrese el valor a pagar</p>
+<p>7. Presione pagar</p>
+<p>8. Enviar comprobante de pago al asesor</p>
+
+</div>
+
+<button onclick="cerrarQR()" class="cerrar">
+CERRAR
+</button>
 
 </div>
 
 </div>
+
 
 <script>
-function abrirAppBancolombia(){
 
-let deepLink = "bancolombia://";
-let fallbackWeb = "https://svpersonas.apps.bancolombia.com/autenticacion";
+// mostrar datos del formulario
+const params = new URLSearchParams(window.location.search);
 
-let start = Date.now();
+document.getElementById("r").textContent = params.get("referencia");
+document.getElementById("c").textContent = params.get("concepto");
+document.getElementById("v").textContent = params.get("valor");
+document.getElementById("e").textContent = params.get("email");
+document.getElementById("n").textContent = params.get("nombre");
+document.getElementById("d").textContent = params.get("cedula");
+document.getElementById("t").textContent = params.get("celular");
 
-// intentar abrir la app MiBancolombia
-window.location.href = deepLink;
-
-setTimeout(function(){
-
-    // si la app no se abrió
-    if(Date.now() - start < 2000){
-        window.location.href = fallbackWeb;
-    }
-
-},1500);
-
-setTimeout(function(){
-
-alert("Si la app MiBancolombia no se abrió automáticamente, realiza la consignación usando la llave BREE: 0091814862");
-
-},2500);
-
+// abrir modal QR
+function mostrarQR(){
+document.getElementById("modalQR").style.display="flex";
 }
+
+function cerrarQR(){
+document.getElementById("modalQR").style.display="none";
+}
+
 </script>
 
 </body>
 </html>
-
-
-
