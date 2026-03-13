@@ -96,21 +96,52 @@ text-align:left;
 margin-top:20px;
 }
 
-.pagos{
-margin-top:30px;
+.pagar{
+background:#28a745;
+color:white;
+padding:12px;
+border:none;
+border-radius:5px;
+margin-top:20px;
+cursor:pointer;
+}
+
+.modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:none;
+justify-content:center;
+align-items:center;
+}
+
+.modalContenido{
+background:white;
+padding:30px;
+border-radius:8px;
+width:350px;
 text-align:center;
 }
 
-.pse{
-width:160px;
+.qr{
+width:200px;
+margin:10px 0;
 }
 
-.banco{
-background:#f9c300;
-color:black;
-padding:12px 20px;
+.pasos{
+text-align:left;
+font-size:14px;
+margin-top:15px;
+}
+
+.cerrar{
+margin-top:20px;
+padding:10px;
 border:none;
+background:#0d6efd;
+color:white;
 border-radius:5px;
-font-weight:bold;
-cursor:pointer;
 }
