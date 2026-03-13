@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Verificar Información</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+<img src="img/logo.png" class="logo">
+</header>
+
+<div class="contenedor">
+
+<div class="titulo">
+POR FAVOR VERIFIQUE LA INFORMACION
+</div>
+
+<div class="datos">
+
+<p><b>Referencia:</b> <span id="r"></span></p>
+<p><b>Concepto:</b> <span id="c"></span></p>
+<p><b>Valor:</b> $<span id="v"></span></p>
+<p><b>Email:</b> <span id="e"></span></p>
+<p><b>Nombre:</b> <span id="n"></span></p>
+<p><b>Cédula:</b> <span id="d"></span></p>
+<p><b>Celular:</b> <span id="t"></span></p>
+
+</div>
+
+<div class="pagos">
+
+<h3>Opciones de pago</h3>
+
+<p>Consignación a la llave BREE: <b>0091814862</b></p>
+
+<button onclick="abrirAppBancolombia()" class="banco">
+ABRIR APP BANCOLOMBIA
+</button>
+
+<br><br>
+
+<img src="img/pse.png" class="pse">
+<p>O utiliza PSE para pagar desde tu banco</p>
+
+</div>
+
+</div>
+
+<script>
+
+// Obtener datos del formulario
+const params = new URLSearchParams(window.location.search);
+document.getElementById("r").textContent = params.get("referencia");
+document.getElementById("c").textContent = params.get("concepto");
+document.getElementById("v").textContent = params.get("valor");
+document.getElementById("e").textContent = params.get("email");
+document.getElementById("n").textContent = params.get("nombre");
+document.getElementById("d").textContent = params.get("cedula");
+document.getElementById("t").textContent = params.get("celular");
+
+// Intentar abrir app Bancolombia
+function abrirAppBancolombia(){
+    // Esto abre la app si está instalada en el móvil
+    window.location.href = "bancolombia://";
+    // También se puede dar enlace al QR de la llave BREE
+    setTimeout(() => {
+        alert("Si la app no se abrió, realiza la consignación usando la llave BREE: 0091814862");
+    }, 500);
+}
+
+</script>
+
+</body>
+</html>

