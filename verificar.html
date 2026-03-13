@@ -46,7 +46,7 @@ POR FAVOR VERIFIQUE LA INFORMACION
 
 <h2>Pago con Bancolombia</h2>
 
-<img src="qr.jpeg" class="qr-img"
+<img src="qr.jpeg" class="qr-img">
 
 <p class="qr-save">Mantenga presionado el QR para guardarlo en su galería</p>
 
@@ -63,7 +63,7 @@ POR FAVOR VERIFIQUE LA INFORMACION
 
 </div>
 
-<button class="close-btn" onclick="closeQR()">CERRAR</button>
+<button class="pay-btn" onclick="openQR()">PAGAR</button>
 
 </div>
 
@@ -71,18 +71,6 @@ POR FAVOR VERIFIQUE LA INFORMACION
 
 <script src="verificar.js"></script>
 
-<script>
-
-// abrir modal QR
-function mostrarQR(){
-document.getElementById("modalQR").style.display="flex";
-}
-
-function cerrarQR(){
-document.getElementById("modalQR").style.display="none";
-}
-
-</script>
 
 </body>
 </html>
