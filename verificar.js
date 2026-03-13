@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function(){
+
 const params = new URLSearchParams(window.location.search);
 
 document.getElementById("referencia").textContent = params.get("referencia") || "";
@@ -11,17 +13,9 @@ document.getElementById("celular").textContent = params.get("celular") || "";
 });
 
 function openQR(){
-
-const modal = document.getElementById("qrModal");
-
-modal.style.display = "flex";
-
+document.getElementById("qrModal").style.display="flex";
 }
 
 function closeQR(){
-
-const modal = document.getElementById("qrModal");
-
-modal.style.display = "none";
-
+document.getElementById("qrModal").style.display="none";
 }
