@@ -1,4 +1,4 @@
-function pagar(){
+function enviarDatos(){
 
 let referencia = document.getElementById("referencia").value;
 let concepto = document.getElementById("concepto").value;
