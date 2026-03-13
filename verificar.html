@@ -51,14 +51,43 @@ ABRIR APP BANCOLOMBIA
 
 <script>
 function abrirAppBancolombia(){
-    // Intentar abrir app Bancolombia en móvil
-    window.location.href = "bancolombia://";
-    // Mensaje de respaldo si no se abrió
-    setTimeout(() => {
-        alert("Si la app no se abrió automáticamente, realiza la consignación usando la llave BREE: 0091814862");
-    }, 500);
+
+let transferUrl = "bancolombia://transfer";
+let appUrl = "bancolombia://";
+let webUrl = "https://www.bancolombia.com/personas";
+
+let start = Date.now();
+
+// intentar abrir transferencias
+window.location.href = transferUrl;
+
+setTimeout(function(){
+
+    // intentar abrir app normal
+    if(Date.now() - start < 1500){
+        window.location.href = appUrl;
+    }
+
+},800);
+
+setTimeout(function(){
+
+    // abrir web si nada funcionó
+    if(Date.now() - start < 2500){
+        window.location.href = webUrl;
+    }
+
+},1600);
+
+setTimeout(function(){
+
+    alert("Si la app MiBancolombia no se abrió automáticamente, realiza la consignación usando la llave BREE: 0091814862");
+
+},2500);
+
 }
 </script>
 
 </body>
 </html>
+
