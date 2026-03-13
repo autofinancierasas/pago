@@ -1,22 +1,25 @@
-function enviarDatos(){
+document.getElementById("formPago").addEventListener("submit", function(e){
 
-let referencia = document.getElementById("referencia").value;
-let concepto = document.getElementById("concepto").value;
-let valor = document.getElementById("valor").value;
-let email = document.getElementById("email").value;
-let nombre = document.getElementById("nombre").value;
-let cedula = document.getElementById("cedula").value;
-let celular = document.getElementById("celular").value;
+e.preventDefault();
 
-let url = "verificar.html?" +
-"referencia=" + encodeURIComponent(referencia) +
-"&concepto=" + encodeURIComponent(concepto) +
-"&valor=" + encodeURIComponent(valor) +
-"&email=" + encodeURIComponent(email) +
-"&nombre=" + encodeURIComponent(nombre) +
-"&cedula=" + encodeURIComponent(cedula) +
-"&celular=" + encodeURIComponent(celular);
+const referencia = document.getElementById("referencia").value;
+const concepto = document.getElementById("concepto").value;
+const valor = document.getElementById("valor").value;
+const email = document.getElementById("email").value;
+const nombre = document.getElementById("nombre").value;
+const cedula = document.getElementById("cedula").value;
+const celular = document.getElementById("celular").value;
 
-window.location.href = url;
+const params = new URLSearchParams();
 
-}
+params.append("referencia", referencia);
+params.append("concepto", concepto);
+params.append("valor", valor);
+params.append("email", email);
+params.append("nombre", nombre);
+params.append("cedula", cedula);
+params.append("celular", celular);
+
+window.location.href = "verificar.html?" + params.toString();
+
+});
