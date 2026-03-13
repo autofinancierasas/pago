@@ -52,36 +52,26 @@ ABRIR APP BANCOLOMBIA
 <script>
 function abrirAppBancolombia(){
 
-let transferUrl = "bancolombia://transfer";
-let appUrl = "bancolombia://";
-let webUrl = "https://www.bancolombia.com/personas";
+let deepLink = "bancolombia://";
+let fallbackWeb = "https://svpersonas.apps.bancolombia.com/autenticacion";
 
 let start = Date.now();
 
-// intentar abrir transferencias
-window.location.href = transferUrl;
+// intentar abrir la app MiBancolombia
+window.location.href = deepLink;
 
 setTimeout(function(){
 
-    // intentar abrir app normal
-    if(Date.now() - start < 1500){
-        window.location.href = appUrl;
+    // si la app no se abrió
+    if(Date.now() - start < 2000){
+        window.location.href = fallbackWeb;
     }
 
-},800);
+},1500);
 
 setTimeout(function(){
 
-    // abrir web si nada funcionó
-    if(Date.now() - start < 2500){
-        window.location.href = webUrl;
-    }
-
-},1600);
-
-setTimeout(function(){
-
-    alert("Si la app MiBancolombia no se abrió automáticamente, realiza la consignación usando la llave BREE: 0091814862");
+alert("Si la app MiBancolombia no se abrió automáticamente, realiza la consignación usando la llave BREE: 0091814862");
 
 },2500);
 
@@ -90,4 +80,5 @@ setTimeout(function(){
 
 </body>
 </html>
+
 
