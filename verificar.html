@@ -20,7 +20,7 @@ POR FAVOR VERIFIQUE LA INFORMACION
 
 <div class="datos">
 
-<p><b>Referencia:</b> <span id="referencia"></span></p>
+p><b>Referencia:</b> <span id="referencia"></span></p>
 <p><b>Concepto:</b> <span id="concepto"></span></p>
 <p><b>Valor:</b> $<span id="valor"></span></p>
 <p><b>Email:</b> <span id="email"></span></p>
@@ -43,7 +43,7 @@ PAGAR
 
 <div class="modalContenido">
 
-<h3>Pagar con QR Bancolombia</h3>
+<h3>Pagar con Bancolombia</h3>
 
 <img src="qr.jpeg" class="qr">
 
@@ -72,19 +72,9 @@ CERRAR
 
 </div>
 
+<script src="verificar.js"></script>
 
 <script>
-
-// mostrar datos del formulario
-const params = new URLSearchParams(window.location.search);
-
-document.getElementById("r").textContent = params.get("referencia");
-document.getElementById("c").textContent = params.get("concepto");
-document.getElementById("v").textContent = params.get("valor");
-document.getElementById("e").textContent = params.get("email");
-document.getElementById("n").textContent = params.get("nombre");
-document.getElementById("d").textContent = params.get("cedula");
-document.getElementById("t").textContent = params.get("celular");
 
 // abrir modal QR
 function mostrarQR(){
