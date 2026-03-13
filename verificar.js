@@ -1,5 +1,3 @@
-document.addEventListener("DOMContentLoaded", function(){
-
 const params = new URLSearchParams(window.location.search);
 
 document.getElementById("referencia").textContent = params.get("referencia") || "";
@@ -10,12 +8,12 @@ document.getElementById("nombre").textContent = params.get("nombre") || "";
 document.getElementById("cedula").textContent = params.get("cedula") || "";
 document.getElementById("celular").textContent = params.get("celular") || "";
 
-});
-
 function openQR(){
-document.getElementById("qrModal").style.display="flex";
+const modal = document.getElementById("qrModal");
+modal.style.display = "flex";
 }
 
 function closeQR(){
-document.getElementById("qrModal").style.display="none";
+const modal = document.getElementById("qrModal");
+modal.style.display = "none";
 }
