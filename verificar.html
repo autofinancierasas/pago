@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Verificar Información</title>
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -39,19 +40,19 @@ PAGAR
 
 <!-- MODAL QR -->
 
-<div id="modalQR" class="modal">
+<div class="modal" id="qrModal">
 
-<div class="modalContenido">
+<div class="modal-content">
 
-<h3>Pagar con Bancolombia</h3>
+<img src="autologo.png" class="modal-logo">
 
-<img src="qr.jpeg" class="qr">
+<h2>Pago con Bancolombia</h2>
 
-<p class="guardar">
-Mantén presionado el QR para guardarlo en tu galería
-</p>
+<img src="qr.jpeg" class="qr-img"
 
-<div class="pasos">
+<p class="qr-save">Mantenga presionado el QR para guardarlo en su galería</p>
+
+<div class="steps">
 
 <p>1. Guarde la imagen QR</p>
 <p>2. Ingrese a su app MiBancolombia</p>
@@ -64,9 +65,7 @@ Mantén presionado el QR para guardarlo en tu galería
 
 </div>
 
-<button onclick="cerrarQR()" class="cerrar">
-CERRAR
-</button>
+<button class="close-btn" onclick="closeQR()">CERRAR</button>
 
 </div>
 
